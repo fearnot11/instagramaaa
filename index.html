@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram World | 公式アカウントのご紹介</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts (Inter & Noto Sans JP) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        insta: {
+                            purple: '#833AB4',
+                            red: '#FD1D1D',
+                            yellow: '#FCB045',
+                            pink: '#E1306C',
+                            dark: '#121212',
+                            cardDark: '#1E1E1E'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Noto Sans JP', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'insta-gradient': 'linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80)',
+                        'insta-text-gradient': 'linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .gradient-text {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .gradient-border-wrap {
+            position: relative;
+            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #FCAF45);
+            padding: 3px;
+            border-radius: 9999px;
+        }
+
+        .phone-mockup {
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+        }
+        .dark .glass-effect {
+            background: rgba(18, 18, 18, 0.7);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .dark ::-webkit-scrollbar-track {
+            background: #1a1a1a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #c13584;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-insta-dark dark:text-slate-100 font-sans transition-colors duration-300 antialiased">
+
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 w-full z-40 glass-effect border-b border-slate-200/50 dark:border-slate-800/50 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 p-0.5 flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-300">
+                    <div class="w-full h-full bg-white dark:bg-slate-900 rounded-[10px] flex items-center justify-center">
+                        <i class="fa-brands fa-instagram text-2xl gradient-text"></i>
+                    </div>
+                </div>
+                <span class="font-bold text-xl tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">
+                    @creative_studio
+                </span>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm">
+                <a href="#about" class="hover:text-pink-500 transition-colors">概要</a>
+                <a href="#stats" class="hover:text-pink-500 transition-colors">実績データ</a>
+                <a href="#gallery" class="hover:text-pink-500 transition-colors">ギャラリー</a>
+                <a href="#highlights" class="hover:text-pink-500 transition-colors">ハイライト</a>
+            </nav>
+
+            <!-- Actions (Theme Toggle & CTA) -->
+            <div class="flex items-center gap-3">
+                <!-- Theme Toggle Button -->
+                <button id="themeToggle" class="p-2.5 rounded-full hover:bg-slate-200/60 dark:hover:bg-slate-800 transition-colors" aria-label="Toggle Theme">
+                    <i id="themeIcon" class="fa-solid fa-moon text-slate-600 dark:text-yellow-400 text-lg"></i>
+                </button>
+
+                <!-- Instagram Action Button -->
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 text-white font-semibold text-sm shadow-lg shadow-pink-500/25 hover:shadow-pink-500/40 hover:scale-105 transition-all duration-300">
+                    <i class="fa-brands fa-instagram text-lg"></i>
+                    <span>フォローする</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-16">
+        <!-- Hero Section -->
+        <section id="about" class="relative overflow-hidden pt-12 pb-20 lg:pt-24 lg:pb-32 bg-gradient-to-b from-purple-50/50 via-white to-slate-50 dark:from-slate-900/50 dark:via-insta-dark dark:to-insta-dark">
+            <!-- Background Decorative Glows -->
+            <div class="absolute top-1/4 left-10 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute bottom-10 right-10 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                    
+                    <!-- Left: Content -->
+                    <div class="lg:col-span-7 text-center lg:text-left space-y-6">
+                        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-pink-100 dark:bg-pink-950/50 text-pink-600 dark:text-pink-400 text-xs font-semibold uppercase tracking-wider border border-pink-200 dark:border-pink-800/50">
+                            <i class="fa-solid fa-sparkles"></i>
+                            Official Instagram Page
+                        </div>
+                        
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                            世界観を彩る<br class="hidden sm:inline">
+                            <span class="gradient-text">ビジュアル＆ストーリー</span>
+                        </h1>
+                        
+                        <p class="text-slate-600 dark:text-slate-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
+                            デザイン、写真、そしてインスピレーション。日々のクリエイティブな瞬間や制作の裏側をInstagramで発信中。最新のトレンドと感動をお届けします。
+                        </p>
+
+                        <!-- Buttons -->
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                            <a href="https://instagram.com" target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 text-white font-bold shadow-xl shadow-pink-500/30 hover:shadow-pink-500/50 hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-3">
+                                <i class="fa-brands fa-instagram text-xl"></i>
+                                <span>@creative_studio をフォロー</span>
+                            </a>
+                            <a href="#gallery" class="w-full sm:w-auto px-8 py-4 rounded-full bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 font-semibold border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-700 transition-all duration-300 flex items-center justify-center gap-2">
+                                <span>最新ポストを見る</span>
+                                <i class="fa-solid fa-arrow-down text-xs"></i>
+                            </a>
+                        </div>
+
+                        <!-- Mini Stats -->
+                        <div class="pt-8 grid grid-cols-3 gap-4 border-t border-slate-200 dark:border-slate-800 max-w-lg mx-auto lg:mx-0 text-center lg:text-left">
+                            <div>
+                                <div class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">12.5K</div>
+                                <div class="text-xs text-slate-500 dark:text-slate-400 font-medium">フォロワー</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">450+</div>
+                                <div class="text-xs text-slate-500 dark:text-slate-400 font-medium">投稿数</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">98%</div>
+                                <div class="text-xs text-slate-500 dark:text-slate-400 font-medium">エンゲージメント</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Interactive Mobile Mockup -->
+                    <div class="lg:col-span-5 flex justify-center">
+                        <div class="relative w-full max-w-[320px]">
+                            <!-- Phone Outline -->
+                            <div class="phone-mockup relative border-[10px] border-slate-900 dark:border-slate-800 rounded-[45px] bg-white dark:bg-slate-900 overflow-hidden shadow-2xl">
+                                
+                                <!-- Top Notch Bar -->
+                                <div class="w-full h-6 bg-slate-900 dark:bg-slate-800 flex justify-center items-center">
+                                    <div class="w-20 h-3 bg-black rounded-full"></div>
+                                </div>
+
+                                <!-- Instagram Profile Header Mock -->
+                                <div class="p-4 border-b border-slate-100 dark:border-slate-800">
+                                    <div class="flex items-center justify-between mb-3">
+                                        <span class="font-bold text-xs">creative_studio</span>
+                                        <i class="fa-solid fa-ellipsis text-xs text-slate-400"></i>
+                                    </div>
+                                    <div class="flex items-center gap-4">
+                                        <!-- Profile Avatar with Gradient Ring -->
+                                        <div class="gradient-border-wrap flex-shrink-0">
+                                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" alt="Avatar" class="w-14 h-14 rounded-full object-cover border-2 border-white dark:border-slate-900">
+                                        </div>
+                                        <div class="flex-1 flex justify-around text-center">
+                                            <div>
+                                                <div class="font-bold text-xs">452</div>
+                                                <div class="text-[10px] text-slate-400">投稿</div>
+                                            </div>
+                                            <div>
+                                                <div class="font-bold text-xs">12.5k</div>
+                                                <div class="text-[10px] text-slate-400">フォロワー</div>
+                                            </div>
+                                            <div>
+                                                <div class="font-bold text-xs">380</div>
+                                                <div class="text-[10px] text-slate-400">フォロー</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Bio -->
+                                    <div class="mt-3 text-[11px] leading-tight">
+                                        <p class="font-bold">Creative Design Studio</p>
+                                        <p class="text-slate-500 dark:text-slate-400">Visuals / Photography / Art Direction</p>
+                                        <p class="text-blue-500 text-[10px] mt-0.5">linktr.ee/creativestudio</p>
+                                    </div>
+                                </div>
+
+                                <!-- Highlights Mock -->
+                                <div class="p-2 flex gap-3 overflow-x-auto border-b border-slate-100 dark:border-slate-800 no-scrollbar">
+                                    <div class="flex flex-col items-center gap-1 flex-shrink-0">
+                                        <div class="w-10 h-10 rounded-full border border-slate-300 dark:border-slate-700 p-0.5">
+                                            <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=100&q=80" class="w-full h-full rounded-full object-cover">
+                                        </div>
+                                        <span class="text-[9px]">Works</span>
+                                    </div>
+                                    <div class="flex flex-col items-center gap-1 flex-shrink-0">
+                                        <div class="w-10 h-10 rounded-full border border-slate-300 dark:border-slate-700 p-0.5">
+                                            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=100&q=80" class="w-full h-full rounded-full object-cover">
+                                        </div>
+                                        <span class="text-[9px]">Process</span>
+                                    </div>
+                                    <div class="flex flex-col items-center gap-1 flex-shrink-0">
+                                        <div class="w-10 h-10 rounded-full border border-slate-300 dark:border-slate-700 p-0.5">
+                                            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=100&q=80" class="w-full h-full rounded-full object-cover">
+                                        </div>
+                                        <span class="text-[9px]">Setup</span>
+                                    </div>
+                                </div>
+
+                                <!-- Feed Grid Mock -->
+                                <div class="grid grid-cols-3 gap-0.5 bg-slate-200 dark:bg-slate-800">
+                                    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=300&q=80" class="w-full h-24 object-cover">
+                                    <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=300&q=80" class="w-full h-24 object-cover">
+                                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=300&q=80" class="w-full h-24 object-cover">
+                                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=300&q=80" class="w-full h-24 object-cover">
+                                    <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=300&q=80" class="w-full h-24 object-cover">
+                                    <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=300&q=80" class="w-full h-24 object-cover">
+                                </div>
+
+                                <!-- Phone Bottom Navigation Mock -->
+                                <div class="p-3 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 flex justify-around text-slate-600 dark:text-slate-300">
+                                    <i class="fa-solid fa-house"></i>
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                    <i class="fa-regular fa-square-plus"></i>
+                                    <i class="fa-solid fa-clapperboard"></i>
+                                    <i class="fa-regular fa-circle-user"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section id="stats" class="py-16 bg-white dark:bg-insta-cardDark border-y border-slate-100 dark:border-slate-800 transition-colors">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                    
+                    <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/50">
+                        <div class="text-3xl sm:text-4xl font-extrabold gradient-text mb-2 counter" data-target="12500">0</div>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 font-medium">総フォロワー数</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/50">
+                        <div class="text-3xl sm:text-4xl font-extrabold gradient-text mb-2 counter" data-target="85000">0</div>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 font-medium">月間インプレッション</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/50">
+                        <div class="text-3xl sm:text-4xl font-extrabold gradient-text mb-2 counter" data-target="450">0</div>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 font-medium">投稿コンテンツ数</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/50">
+                        <div class="text-3xl sm:text-4xl font-extrabold gradient-text mb-2 counter" data-target="98">0</div>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 font-medium">満足度 (%)</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Post Gallery Section -->
+        <section id="gallery" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">
+                    ギャラリー & 最新ポスト
+                </h2>
+                <p class="text-slate-600 dark:text-slate-400">
+                    画像をタップして詳細とコメントをチェックできます。
+                </p>
+            </div>
+
+            <!-- Gallery Filter Buttons -->
+            <div class="flex justify-center gap-2 mb-10 flex-wrap">
+                <button class="filter-btn active px-5 py-2 rounded-full text-sm font-semibold bg-gradient-to-r from-purple-600 to-pink-500 text-white shadow-md" data-filter="all">すべて</button>
+                <button class="filter-btn px-5 py-2 rounded-full text-sm font-semibold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-700 transition" data-filter="design">デザイン</button>
+                <button class="filter-btn px-5 py-2 rounded-full text-sm font-semibold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-700 transition" data-filter="photo">写真</button>
+                <button class="filter-btn px-5 py-2 rounded-full text-sm font-semibold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-700 transition" data-filter="lifestyle">ライフスタイル</button>
+            </div>
+
+            <!-- Grid Items -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                
+                <!-- Post Item 1 -->
+                <div class="gallery-item design relative aspect-square rounded-2xl overflow-hidden group cursor-pointer shadow-lg" onclick="openModal(1)">
+                    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-6 text-white font-bold">
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-heart text-xl"></i> <span>1,240</span></div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-comment text-xl"></i> <span>85</span></div>
+                    </div>
+                </div>
+
+                <!-- Post Item 2 -->
+                <div class="gallery-item photo relative aspect-square rounded-2xl overflow-hidden group cursor-pointer shadow-lg" onclick="openModal(2)">
+                    <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-6 text-white font-bold">
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-heart text-xl"></i> <span>980</span></div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-comment text-xl"></i> <span>42</span></div>
+                    </div>
+                </div>
+
+                <!-- Post Item 3 -->
+                <div class="gallery-item lifestyle relative aspect-square rounded-2xl overflow-hidden group cursor-pointer shadow-lg" onclick="openModal(3)">
+                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-6 text-white font-bold">
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-heart text-xl"></i> <span>2,150</span></div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-comment text-xl"></i> <span>112</span></div>
+                    </div>
+                </div>
+
+                <!-- Post Item 4 -->
+                <div class="gallery-item design relative aspect-square rounded-2xl overflow-hidden group cursor-pointer shadow-lg" onclick="openModal(4)">
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-6 text-white font-bold">
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-heart text-xl"></i> <span>1,830</span></div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-comment text-xl"></i> <span>64</span></div>
+                    </div>
+                </div>
+
+                <!-- Post Item 5 -->
+                <div class="gallery-item photo relative aspect-square rounded-2xl overflow-hidden group cursor-pointer shadow-lg" onclick="openModal(5)">
+                    <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-6 text-white font-bold">
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-heart text-xl"></i> <span>3,400</span></div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-comment text-xl"></i> <span>190</span></div>
+                    </div>
+                </div>
+
+                <!-- Post Item 6 -->
+                <div class="gallery-item lifestyle relative aspect-square rounded-2xl overflow-hidden group cursor-pointer shadow-lg" onclick="openModal(6)">
+                    <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-6 text-white font-bold">
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-heart text-xl"></i> <span>1,510</span></div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-comment text-xl"></i> <span>77</span></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Features Highlights Section -->
+        <section id="highlights" class="py-20 bg-slate-100 dark:bg-slate-900/50 transition-colors">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">アカウントの特徴</h2>
+                    <p class="text-slate-600 dark:text-slate-400">どのようなコンテンツを更新しているかをご紹介します。</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Feature 1 -->
+                    <div class="p-8 rounded-2xl bg-white dark:bg-insta-cardDark shadow-md border border-slate-100 dark:border-slate-800 hover:-translate-y-1 transition duration-300">
+                        <div class="w-14 h-14 rounded-xl bg-pink-100 dark:bg-pink-900/40 text-pink-500 flex items-center justify-center text-2xl mb-6">
+                            <i class="fa-solid fa-palette"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">デザイン＆ビジュアル</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                            色彩や構成にこだわった洗練されたアートワークやUI/UXデザイン事例を日常的に投稿しています。
+                        </p>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="p-8 rounded-2xl bg-white dark:bg-insta-cardDark shadow-md border border-slate-100 dark:border-slate-800 hover:-translate-y-1 transition duration-300">
+                        <div class="w-14 h-14 rounded-xl bg-purple-100 dark:bg-purple-900/40 text-purple-500 flex items-center justify-center text-2xl mb-6">
+                            <i class="fa-solid fa-film"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Reels (ショート動画)</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                            制作プロセスの裏側や、1分で学べるクリエイティブなチュートリアルを動画で分かりやすく発信。
+                        </p>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="p-8 rounded-2xl bg-white dark:bg-insta-cardDark shadow-md border border-slate-100 dark:border-slate-800 hover:-translate-y-1 transition duration-300">
+                        <div class="w-14 h-14 rounded-xl bg-yellow-100 dark:bg-yellow-900/40 text-yellow-600 flex items-center justify-center text-2xl mb-6">
+                            <i class="fa-solid fa-comments"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">インタラクティブ情報</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                            ストーリーズでのQ&Aやアンケートを通じ、フォロワーの皆様とリアルタイムで交流を行っています。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call To Action Section -->
+        <section class="py-20 relative overflow-hidden bg-gradient-to-r from-purple-700 via-pink-600 to-red-500 text-white text-center">
+            <div class="max-w-4xl mx-auto px-4 relative z-10 space-y-6">
+                <i class="fa-brands fa-instagram text-6xl opacity-90"></i>
+                <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight">
+                    今すぐInstagramをチェック！
+                </h2>
+                <p class="text-white/80 text-lg max-w-xl mx-auto font-light">
+                    最新の投稿やストーリーズを見逃さないために、ぜひアカウントのフォローをお願いします。
+                </p>
+                <div class="pt-4">
+                    <a href="https://instagram.com" target="_blank" class="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white text-slate-900 font-bold shadow-2xl hover:bg-slate-100 hover:scale-105 transition duration-300">
+                        <i class="fa-brands fa-instagram text-xl text-pink-600"></i>
+                        <span>@creative_studio をフォロー</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-insta-dark border-t border-slate-200 dark:border-slate-800 py-12 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-2">
+                <i class="fa-brands fa-instagram gradient-text text-2xl"></i>
+                <span class="font-bold text-slate-800 dark:text-slate-200">@creative_studio</span>
+            </div>
+            <p class="text-xs text-slate-500 dark:text-slate-400">
+                &copy; 2026 Creative Studio. All Rights Reserved. (Not affiliated with Meta or Instagram)
+            </p>
+        </div>
+    </footer>
+
+    <!-- Interactive Post Modal -->
+    <div id="postModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-slate-900 rounded-2xl max-w-3xl w-full overflow-hidden shadow-2xl flex flex-col md:flex-row max-h-[90vh]">
+            
+            <!-- Modal Image Left -->
+            <div class="md:w-1/2 bg-black flex items-center justify-center">
+                <img id="modalImg" src="" class="w-full h-full object-cover max-h-[400px] md:max-h-none">
+            </div>
+
+            <!-- Modal Content Right -->
+            <div class="md:w-1/2 p-6 flex flex-col justify-between">
+                <div>
+                    <!-- Header -->
+                    <div class="flex items-center justify-between pb-4 border-b border-slate-200 dark:border-slate-800">
+                        <div class="flex items-center gap-3">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" class="w-8 h-8 rounded-full">
+                            <span class="font-bold text-sm">creative_studio</span>
+                        </div>
+                        <button onclick="closeModal()" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 text-lg">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </div>
+
+                    <!-- Post Body Text -->
+                    <div class="py-4 text-sm space-y-2">
+                        <p id="modalCaption" class="text-slate-700 dark:text-slate-300 leading-relaxed"></p>
+                        <p class="text-blue-500 text-xs">#design #creative #inspiration #art</p>
+                    </div>
+                </div>
+
+                <!-- Footer / Actions -->
+                <div class="pt-4 border-t border-slate-200 dark:border-slate-800 space-y-3">
+                    <div class="flex justify-between text-xl text-slate-700 dark:text-slate-300">
+                        <div class="flex gap-4">
+                            <button id="likeBtn" class="hover:text-red-500 transition"><i class="fa-regular fa-heart"></i></button>
+                            <i class="fa-regular fa-comment hover:text-blue-500 cursor-pointer"></i>
+                            <i class="fa-regular fa-paper-plane hover:text-green-500 cursor-pointer"></i>
+                        </div>
+                        <i class="fa-regular fa-bookmark hover:text-yellow-500 cursor-pointer"></i>
+                    </div>
+                    <div class="font-bold text-sm" id="modalLikes"></div>
+                    <div class="text-[10px] text-slate-400 uppercase">2 DAYS AGO</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Data for Modal Preview
+        const postsData = {
+            1: {
+                img: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80",
+                caption: "抽象的なグラフィックデザインの探求。色と光の重なりが創り出すグラデーションの世界。",
+                likes: "1,240 件の「いいね！」"
+            },
+            2: {
+                img: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80",
+                caption: "クリエイティブな思考を生むミニマルなワークスペース。整えられた環境から新しいアイデアが生まれます。",
+                likes: "980 件の「いいね！」"
+            },
+            3: {
+                img: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80",
+                caption: "ネオンカラーと未来感が交差するグラフィック作品。レトロフューチャーな雰囲気を意識しました。",
+                likes: "2,150 件の「いいね！」"
+            },
+            4: {
+                img: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
+                caption: "デジタルデバイスとマテリアルデザインの融合。細部へのこだわりが全体の美しさを決定づけます。",
+                likes: "1,830 件の「いいね！」"
+            },
+            5: {
+                img: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80",
+                caption: "サイバーパンク風のビジュアルエフェクト。テクノロジーの進化と共にデザインの幅も広がります。",
+                likes: "3,400 件の「いいね！」"
+            },
+            6: {
+                img: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80",
+                caption: "チームでのブレインストーミング風景。思考を可視化することで新しいビジョンがクリアに。",
+                likes: "1,510 件の「いいね！」"
+            }
+        };
+
+        // Dark Mode Toggle Logic
+        const themeToggleBtn = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+
+        themeToggleBtn.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            if (document.documentElement.classList.contains('dark')) {
+                themeIcon.classList.remove('fa-moon', 'text-slate-600');
+                themeIcon.classList.add('fa-sun', 'text-yellow-400');
+            } else {
+                themeIcon.classList.remove('fa-sun', 'text-yellow-400');
+                themeIcon.classList.add('fa-moon', 'text-slate-600');
+            }
+        });
+
+        // Filter Logic
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all
+                filterBtns.forEach(b => {
+                    b.classList.remove('active', 'bg-gradient-to-r', 'from-purple-600', 'to-pink-500', 'text-white');
+                    b.classList.add('bg-slate-200', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-300');
+                });
+                
+                // Add active class
+                btn.classList.add('active', 'bg-gradient-to-r', 'from-purple-600', 'to-pink-500', 'text-white');
+                btn.classList.remove('bg-slate-200', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-300');
+
+                const filter = btn.getAttribute('data-filter');
+
+                galleryItems.forEach(item => {
+                    if (filter === 'all' || item.classList.contains(filter)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Modal Logic
+        const modal = document.getElementById('postModal');
+        const modalImg = document.getElementById('modalImg');
+        const modalCaption = document.getElementById('modalCaption');
+        const modalLikes = document.getElementById('modalLikes');
+        const likeBtn = document.getElementById('likeBtn');
+
+        function openModal(id) {
+            const data = postsData[id];
+            if (data) {
+                modalImg.src = data.img;
+                modalCaption.textContent = data.caption;
+                modalLikes.textContent = data.likes;
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close Modal on backdrop click
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Toggle Like Icon inside Modal
+        likeBtn.addEventListener('click', () => {
+            const icon = likeBtn.querySelector('i');
+            if (icon.classList.contains('fa-regular')) {
+                icon.classList.remove('fa-regular');
+                icon.classList.add('fa-solid', 'text-red-500');
+            } else {
+                icon.classList.remove('fa-solid', 'text-red-500');
+                icon.classList.add('fa-regular');
+            }
+        });
+
+        // Animated Stats Counters
+        const counters = document.querySelectorAll('.counter');
+        let animated = false;
+
+        window.addEventListener('scroll', () => {
+            const statsSection = document.getElementById('stats');
+            const sectionPos = statsSection.getBoundingClientRect().top;
+            const screenPos = window.innerHeight / 1.3;
+
+            if (sectionPos < screenPos && !animated) {
+                animated = true;
+                counters.forEach(counter => {
+                    const target = +counter.getAttribute('data-target');
+                    const duration = 2000;
+                    const step = Math.ceil(target / (duration / 20));
+                    let current = 0;
+
+                    const timer = setInterval(() => {
+                        current += step;
+                        if (current >= target) {
+                            counter.innerText = target.toLocaleString();
+                            clearInterval(timer);
+                        } else {
+                            counter.innerText = current.toLocaleString();
+                        }
+                    }, 20);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
